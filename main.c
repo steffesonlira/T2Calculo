@@ -12,7 +12,7 @@ int main()
     maintestdois(); //teste zero
     setlocale(LC_ALL, "Portuguese");
 
-    int op,opf;
+    char op,opf;
     double k,x;// variáveis usadas na opção Derivadas
     double a,b; //variáveis usadas na opção Integral
     double x0; //Variável usada na opção Zero da Função
@@ -22,16 +22,23 @@ int main()
     
  do{
  do{
+ do{    
     printf(" Escolha uma das opções abaixo: ");
     printf("\n 1 - Derivadas");
     printf("\n 2 - Integral");
     printf("\n 3 - Zero da função.");
     printf("\n 4 - Sair\n");
     printf(" ");
-        scanf("%d", &op);
+        scanf("%c", &op);
             system("cls");
+    fflush(stdin);
+    if (isalpha(op)){
+        printf("Você entrou com uma letra, por favor selecione um número");
+    }
                 if (op==4){exit(0);}
+ }while(isalpha(op));
 
+  do{
     printf("\n Escolha a Função abaixo: ");
     printf("\n 1 - f(x) = k");
     printf("\n 2 - f(x) = x^k");
@@ -47,11 +54,20 @@ int main()
     printf("\n12 - Voltar ao menu opções.");
     printf("\n13 - Sair.");
     printf("\n ");
-        scanf("%d", &opf);
+        scanf("%c", &opf);
             system("cls");
                 if (opf==13){exit(0);}
-}while (opf==12);
-    
+                    
+ }while (opf==12);
+  fflush(stdin);
+    if (isalpha(opf)){
+        printf("Você entrou com uma letra, por favor selecione um número");
+    }
+                
+ }while(isalpha(opf));  
+     
+     
+     
     if(op==1){
         printf("\n Digite o valor de X:\n ");
             scanf("%f", &x); 
