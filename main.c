@@ -14,11 +14,11 @@ int main()
     //maintestdois(); //teste zero
     setlocale(LC_ALL, "Portuguese");
 
-    char op;
-    char opf;
-    double k,x;// variÃ¡veis usadas na opÃ§Ã£o Derivadas
-    double a,b; //variÃ¡veis usadas na opÃ§Ã£o Integral
-    double x0; //VariÃ¡vel usada na opÃ§Ã£o Zero da FunÃ§Ã£o
+    int op;
+    int opf;
+    double k,x;// variáveis usadas na opção Derivadas
+    double a,b; //variáveis usadas na opção Integral
+    double x0; //Variável usada na opção Zero da Função
     double  result;
     double  *resultzero;
     char final;
@@ -26,33 +26,41 @@ int main()
  do{
  do{
  do{
-
-    printf("\n Escolha uma das opÃ§Ãµes abaixo: ");
+ do{
+    printf("\n Escolha uma das opções abaixo: ");
     printf("\n 1 - Derivadas");
     printf("\n 2 - Integral");
-    printf("\n 3 - Zero da funÃ§Ã£o.");
+    printf("\n 3 - Zero da função.");
     printf("\n 4 - Sair\n");
     printf("\nEscolha a opcao: ");
-        scanf(" %c",&op);
+        scanf(" %d",&op);
             system("cls");
             fflush(stdin);
 
-        if (isalpha(op))
+printf("Opção inválida");
+ }while(!(op == 1 || op == 2 || op == 3 || op == 4));
+
+
+        //verifica se um caractere é alfabético ou não
+        if (isalpha(op))//se sim
 
         {
 
-            printf("\nVocÃª entrou com uma letra, por favor selecione um nÃºmero\n");
+            printf("\nVocê entrou com uma letra, por favor selecione um número\n");
 
         }
 
                     {
-                        if (op == '4') {exit(0);};
+                        if (op == 4) {
+                            printf("-----------------Obrigado por utilizar nossa calculadora! -------------------");
+                            exit(0);
+                        };
                     }
 
  }while(isalpha(op));
 
   do{
-    printf("\n Escolha a FunÃ§Ã£o abaixo: ");
+    printf("\n Escolha a Função abaixo: ");
     printf("\n 1 - f(x) = k");
     printf("\n 2 - f(x) = x^k");
     printf("\n 3 - f(x) = k^x");
@@ -64,22 +72,29 @@ int main()
     printf("\n 9 - f(x) = tg(x)");
     printf("\n 10 - f(x) = sqrt(x)");
     printf("\n 11 - f(x) = 1/x");
-    printf("\n 12 - Voltar ao menu opÃ§Ãµes.");
+    printf("\n 12 - Voltar ao menu opções.");
     printf("\n 13 - Sair.");
     printf("\n ");
     printf("\nEscolha sua opcao: ");
-        scanf("%c", &opf);
+        scanf("%d", &opf);
             system("cls");
             fflush(stdin);
-                if (opf == '13'){exit(0);}
 
 
- }while (opf == '12');
+                if (opf == 13){
+                        printf("-----------------Obrigado por utilizar nossa calculadora! -------------------");
+                        exit(0);
+                }
+
+
+
+printf("Opção inválida!");
+ }while (opf > 13);
 
         if (isalpha(opf))
         {
 
-        printf("VocÃª entrou com uma letra, por favor selecione um nÃºmero");
+        printf("Você entrou com uma letra, por favor selecione um número");
 
         }
 
@@ -88,30 +103,29 @@ int main()
 
 {
 
-        if(op == '1')
+        if(op == 1)
     {
         printf("\n Digite o valor de X:\n ");
             scanf("%lf", &x);
         fflush(stdin);
     }
 
-        if(opf == '1' && opf == '2' && opf == '3' && opf == '5')
+        if(opf == 1 || opf == 2 || opf == 3 || opf == 5)
         {
         printf("\n Digite o valor de K:\n ");
             scanf("% lf", &k);
         fflush(stdin);
         }
 
-    if(opf == '1')
+    if(opf == 1)
         {
             x = 0;
-
             result = Derivada(x,opf,k);
             printf("\n Derivada = %lf \n", result);
         }
 
 
-        if(opf == '2')
+        if(opf == 2)
         {
 
             result = Derivada(x,opf,k);
@@ -119,7 +133,7 @@ int main()
         }
 
 
-        if(opf == '3')
+        if(opf == 3)
         {
             //x = 0;
 
@@ -128,7 +142,7 @@ int main()
         }
 
 
-        if(opf == '4')
+        if(opf == 4)
         {
 
             result = Derivada(x,opf,k);
@@ -136,7 +150,7 @@ int main()
         }
 
 
-        if(opf == '5')
+        if(opf == 5)
         {
 
             result = Derivada(x,opf,k);
@@ -144,7 +158,7 @@ int main()
         }
 
 
-        if(opf == '6')
+        if(opf == 6)
         {
 
             result = Derivada(x,opf,k);
@@ -152,7 +166,7 @@ int main()
         }
 
 
-        if(opf == '7')
+        if(opf == 7)
         {
 
             result = Derivada(x,opf,k);
@@ -160,16 +174,7 @@ int main()
         }
 
 
-        if(opf == '8')
-        {
-
-            result = Derivada(x,opf,k);
-            printf("\n Derivada = %lf \n", result);
-        }
-
-
-
-        if(opf == '9')
+        if(opf == 8)
         {
 
             result = Derivada(x,opf,k);
@@ -178,7 +183,7 @@ int main()
 
 
 
-        if(opf == '10')
+        if(opf == 9)
         {
 
             result = Derivada(x,opf,k);
@@ -187,7 +192,16 @@ int main()
 
 
 
-        if(opf == '11')
+        if(opf == 10)
+        {
+
+            result = Derivada(x,opf,k);
+            printf("\n Derivada = %lf \n", result);
+        }
+
+
+
+        if(opf == 11)
         {
 
             result = Derivada(x,opf,k);
@@ -197,7 +211,7 @@ int main()
 }
 
 
-    if(op == '2')
+    if(op == 2)
     {
 
         printf("\nDigite o valor de A: ");
@@ -211,21 +225,21 @@ int main()
         printf("\nIntegral = %lf\n", result);
     }
 
-    if(op == '3')
+    if(op == 3)
     {
         printf("\nDigite o valor de X0 in R: ");
             scanf("%lf", &x0);
             fflush(stdin);
 
 
-        printf("\nEscolha a FunÃ§Ã£o abaixo:\n");
+        printf("\nEscolha a Função abaixo:\n");
         printf("\n 1 - f(x) = x^2 - 2");
         printf("\n 2 - f(x) = 2x - cos(x)");
         printf("\n 3 - f(x) = x . ln(x) - 1\n");
             scanf("%c", &opf);
 
     resultzero = Zero(x0,opf);
-    printf("\n SoluÃ§Ã£o = %lf\n", resultzero);
+    printf("\n Solução = %lf\n", resultzero);
     printf("\n Erro = %lf\n", resultzero);
     }
 
