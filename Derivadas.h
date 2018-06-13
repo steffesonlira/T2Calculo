@@ -1,8 +1,7 @@
-
-//Prot√≥tipo
+//ProtÛtipo
 double Derivada (double x, char opf, double k);
 
-//√â necess√°rio estar com a biblioteca math no programa
+//… necess·rio estar com a biblioteca math no programa
 double Derivada (double x, char opf, double k){
 double result;
 double h = 0.0000000001;
@@ -12,7 +11,7 @@ double h = 0.0000000001;
 switch(opf){
 
 case '1':
-    result = (pow(k,x + h) - pow(k,x) )/ h;
+    result = ((k,x + h) - (k,x)) / h;
     break;
 case '2':
     result = (pow(x+h,k) - pow(x,k) )/ h;

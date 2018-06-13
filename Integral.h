@@ -1,7 +1,7 @@
-//Prot√≥tipo
+//ProtÛtipo
 double Integral (char opf, double k, double a, double b);
 
-//√â necess√°rio estar com a biblioteca math no programa
+//… necess·rio estar com a biblioteca math no programa
 double Integral (char opf, double k, double a, double b){
 double result, h, vetorx[1000], vetorFx[1000],betFx=0; //betFx recebe a soma dos numeros do meio
 int n = 1000 , i;

@@ -1,4 +1,4 @@
-//ProtÃ³tipo
+//Protótipo
 double * Zero (double xz, char opt);
 
 double * Zero (double xz, char opt){
@@ -65,4 +65,3 @@ case '3': //x . ln(x) - 1
 }
 return result;
 }
-
