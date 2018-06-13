@@ -1,8 +1,8 @@
-//ProtÛtipo
-double Integral (int opf, double k, double a, double b);
+//Prot√≥tipo
+double Integral (char opf, double k, double a, double b);
 
-//… necess·rio estar com a biblioteca math no programa
-double Integral (int opf, double k, double a, double b){
+//√â necess√°rio estar com a biblioteca math no programa
+double Integral (char opf, double k, double a, double b){
 double result, h, vetorx[1000], vetorFx[1000],betFx=0; //betFx recebe a soma dos numeros do meio
 int n = 1000 , i;
 
@@ -18,55 +18,65 @@ for(i=0;i<=n;i++){
 
 switch(opf){
 
-case 1:
+case '1':
     result = 0; //NAO SEI FAZER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     break;
-case 2:
+
+case '2':
     for(i=0;i<=n;i++){
       vetorFx[i] = pow (vetorx[i],k);
     }
     break;
-case 3:
+
+case '3':
     for(i=0;i<=n;i++){
       vetorFx[i] = pow (k,vetorx[i]);
     }
     break;
-case 4:
+
+case '4':
     for(i=0;i<=n;i++){
       vetorFx[i] = exp(vetorx[i]);
     }
     break;
-case 5:
+
+case '5':
     for(i=0;i<=n;i++){
       vetorFx[i] = log(vetorx[i])/log(k);
     }
     break;
-case 6:
+
+case '6':
      for(i=0;i<=n;i++){
       vetorFx[i] = log(vetorx[i]);
     }
     break;
-case 7:
+
+case '7':
     for(i=0;i<=n;i++){
       vetorFx[i] = sin(vetorx[i]);
     }
     break;
-case 8:
+
+case '8':
     for(i=0;i<=n;i++){
       vetorFx[i] = cos(vetorx[i]);
     }
     break;
-case 9:
+
+case '9':
     for(i=0;i<=n;i++){
       vetorFx[i] = tan(vetorx[i]);
     }
     break;
-case 10:
+
+case '10':
     for(i=0;i<=n;i++){
       vetorFx[i] = sqrt(vetorx[i]);
     }
     break;
-case 11:
+
+case '11':
     for(i=0;i<=n;i++){
       vetorFx[i] = 1/vetorx[i];
     }
